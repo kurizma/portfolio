@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Horizontal Editorial Landing Page</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="panelOne.css" />
+    <link rel="stylesheet" href="panelTwo.css" />
+    <link rel="stylesheet" href="panelThree.css" />
+    <link rel="stylesheet" href="panelFour.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a href="#" class="brand">jKim</a>
+
+    <nav class="nav">
+      <a href="#panel-1">Intro</a>
+      <a href="#panel-2">Project</a>
+      <a href="#panel-3">Skills</a>
+      <a href="#panel-4">Contact</a>
+    </nav>
+
+    <div class="meta">
+        Full-Stack Developer / Cybersecurity Focus<br />
+        <a href="mailto:joonkim.insight@gmail.com">joonkim.insight@gmail.com</a>
+    </div>
+  </header>
+
+  <main class="horizontal-shell">
+    <section class="panel" id="panel-1">
+        <div class="panel__content">
+            <div>
+            <p class="eyebrow">The mindset behind the code</p>
+            <h1>Turning complexity into clarity through clear, practical solutions.</h1>
+            </div>
+
+            <div>
+                <p class="lead">
+                    Built around projects across real-time systems, backend engineering, cloud and
+                    DevOps workflows, and security-focused development, this work reflects a collaborative
+                    problem-solving approach shaped by complexity, performance, and clarity. <br>
+                    <br>
+                    The goal is not only to turn difficult technical challenges into reliable, understandable solutions, but
+                    to make them easier for others to build on, work with, and understand together.
+                </p>
+
+                <div class="actions">
+                    <a class="btn primary" href="#panel-2">View Work</a>
+                    <a class="btn" href="#panel-4">Contact Me</a>
+                </div>
+
+                <div class="stats">
+                    <div class="stat">
+                        <b>Full-Stack</b>
+                        SPA interfaces, Core Framework Engineering, and real-time data flows.
+                    </div>
+                    <div class="stat">
+                        <b>DevOps</b>
+                        Microservice orchestration and automated CI/CD pipelines.
+                    </div>
+                    <div class="stat">
+                        <b>Cybersecurity</b>
+                        Penetration testing, vulnerability analysis, and secure application hardening.
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel__footer">
+            <span>From UI work to backend services and deployment</span>
+            <span>Focusing on reliability, performance, and security</span>
+            </div>
+        </div>
+
+        <div class="panel__visual">
+            <div class="image-block"></div>
+            <div class="caption">
+                <div>
+                <strong>This is me!</strong>
+                Calm in the photo. Probably debugging something five minutes later.
+                </div>
+            <span>01</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="panel" id="panel-2">
+        <div class="panel__content">
+            <div>
+            <p class="eyebrow">Selected Projects</p>
+            <h2>Three projects that best reflect how I build across performance, product systems, and security.</h2>
+            </div>
+
+            <div class="project-list">
+            <button
+                type="button"
+                class="project-card is-active"
+                aria-pressed="true"
+                data-project="bomberman"
+                data-title="Bomberman-dom"
+                data-body="A multiplayer browser game built around synchronization, custom framework logic, and performance-first rendering under real-time constraints."
+                data-caption-title="Bomberman-dom"
+                data-caption-text="Real-time gameplay, custom framework architecture, and performance-first front-end logic."
+                data-image-class="showcase-image--bomberman"
+            >
+                <h3>Bomberman-dom</h3>
+                <p>
+                A multiplayer browser game built around synchronization, custom framework logic,
+                and performance-first rendering under real-time constraints.
+                </p>
+            </button>
+
+            <button
+                type="button"
+                class="project-card"
+                aria-pressed="false"
+                data-project="ecommerce"
+                data-title="E-Commerce"
+                data-body="A full-stack commerce platform focused on cart flow, search and filtering, order handling, user profiles, and collaborative delivery practices."
+                data-caption-title="E-Commerce"
+                data-caption-text="Product flows, search, profiles, orders, and full-stack coordination across services."
+                data-image-class="showcase-image--ecommerce"
+            >
+                <h3>E-Commerce</h3>
+                <p>
+                A full-stack commerce platform focused on cart flow, search and filtering,
+                order handling, user profiles, and collaborative delivery practices.
+                </p>
+            </button>
+
+            <button
+                type="button"
+                class="project-card"
+                aria-pressed="false"
+                data-project="holeinbin"
+                data-title="Hole-in-bin"
+                data-body="A reverse-engineering and binary exploitation project centered on debugging, low-level analysis, and understanding how vulnerabilities are uncovered and fixed."
+                data-caption-title="Hole-in-bin"
+                data-caption-text="Binary analysis, exploitation workflows, and practical security problem-solving."
+                data-image-class="showcase-image--holeinbin"
+            >
+                <h3>Hole-in-bin</h3>
+                <p>
+                A reverse-engineering and binary exploitation project centered on debugging,
+                low-level analysis, and understanding how vulnerabilities are uncovered and fixed.
+                </p>
+            </button>
+            </div>
+
+            <div class="panel__footer">
+            <span>Performance / product systems / security research</span>
+            <span>Interactive project showcase</span>
+            </div>
+        </div>
+
+        <div class="panel__visual project-showcase">
+            <article class="showcase-item is-active">
+            <div class="showcase-image showcase-image--bomberman" id="project-image" aria-hidden="true"></div>
+
+            <div class="caption" id="project-caption">
+                <div>
+                <strong id="project-caption-title">Bomberman-dom</strong>
+                <span id="project-caption-text">
+                    Real-time gameplay, custom framework architecture, and performance-first front-end logic.
+                </span>
+                </div>
+                <span>02</span>
+            </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="panel" id="panel-3">
+      <div class="panel__content">
+        <div>
+          <p class="eyebrow">Brand story</p>
+          <h2>Make the page feel curated, not assembled from templates.</h2>
+        </div>
+
+        <div>
+          <p class="lead">
+            The source page works because each section feels like a deliberate chapter.
+            Keep that. Avoid generic SaaS rows, icon circles, and bright gradient blocks.
+            Let a serif headline, quiet body copy, and strong image crop carry the identity.
+          </p>
+        </div>
+
+        <div class="panel__footer">
+          <span>Restraint over decoration</span>
+          <span>Editorial pacing over feature grids</span>
+        </div>
+      </div>
+
+      <div class="panel__visual">
+        <div class="image-block alt-2"></div>
+        <div class="caption">
+          <div>
+            <strong>Atmosphere panel</strong>
+            A single image can act like a full section in this layout.
+          </div>
+          <span>03</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="panel-4">
+      <div class="panel__content">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Finish with one clear conversion point.</h2>
+        </div>
+
+        <div>
+          <p class="lead">
+            End the horizontal sequence with practical information and one decisive CTA.
+            That keeps the premium tone while still making the page useful.
+          </p>
+
+          <div class="actions">
+            <a class="btn primary" href="#">Start project</a>
+            <a class="btn" href="mailto:contact@asterandco.com">Email us</a>
+          </div>
+        </div>
+
+        <div class="panel__footer">
+          <span>contact@asterandco.com</span>
+          <span>+46 00 00 00 00</span>
+        </div>
+      </div>
+
+      <div class="panel__visual">
+        <div class="card implementation-note">
+          <h3>Implementation note</h3>
+          <p>
+            On desktop, this scrolls horizontally. On mobile, it collapses back into a vertical stack so it stays usable.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="scroll-hint">Scroll sideways →</div>
+</body>
+</html>

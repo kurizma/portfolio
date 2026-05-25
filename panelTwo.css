@@ -1,0 +1,133 @@
+#panel-2 .project-list {
+  display: grid;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+
+#panel-2 .project-card {
+  width: 100%;
+  padding: var(--space-6);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.18);
+  text-align: left;
+  color: var(--text);
+  cursor: pointer;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+#panel-2 .project-card:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.28);
+}
+
+#panel-2 .project-card.is-active {
+  background: rgba(255, 255, 255, 0.42);
+  border-color: rgba(31, 27, 23, 0.28);
+  box-shadow: 0 12px 30px rgba(31, 27, 23, 0.08);
+}
+
+#panel-2 .project-card h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  margin-bottom: 0.5rem;
+}
+
+#panel-2 .project-card p {
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 42ch;
+}
+
+#panel-2 .project-showcase {
+  position: relative;
+  height: 100%;
+  min-height: 420px;
+  overflow: hidden;
+}
+
+#panel-2 .showcase-item {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: var(--space-6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 420ms ease;
+}
+
+#panel-2 .showcase-item.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+#panel-2 .showcase-image {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: scale(1.035);
+  transform-origin: center center;
+  transition:
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 500ms ease;
+  will-change: transform, opacity;
+  filter: saturate(0.94) contrast(0.98);
+}
+
+#panel-2 .showcase-item.is-active .showcase-image {
+  transform: scale(1);
+  filter: saturate(1) contrast(1);
+}
+
+#panel-2 .caption {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 300ms ease,
+    transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#panel-2 .showcase-item.is-active .caption {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 120ms;
+}
+
+#panel-2 .showcase-image--bomberman {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18)),
+    url("/assets/utanCig.png") center/cover no-repeat;
+}
+
+#panel-2 .showcase-image--ecommerce {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.16)),
+    url("/assets/utanCig.png") center/cover no-repeat;
+}
+
+#panel-2 .showcase-image--holeinbin {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)),
+    url("/assets/utanCig.png") center/cover no-repeat;
+}
+
+@media (max-width: 900px) {
+  #panel-2 .project-showcase {
+    min-height: 440px;
+  }
+
+  #panel-2 .showcase-image {
+    min-height: 320px;
+  }
+}
