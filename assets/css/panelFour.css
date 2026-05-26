@@ -70,7 +70,7 @@
   overflow: hidden;
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.10)),
-    url("/assets/images/GLAB3881.jpg");
+    url("../images/GLAB3881.jpg");
   background-repeat: no-repeat, no-repeat;
   background-size: auto, cover;
   background-position: 0 0, 34% center;

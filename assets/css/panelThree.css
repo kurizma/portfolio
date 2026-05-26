@@ -27,7 +27,7 @@
   overflow: hidden;
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.14)),
-    url("/assets/images/stackVisual2.png");
+    url("../images/stackVisual2.png");
   background-repeat: cover, no-repeat;
   background-size: auto, cover;
   background-position: 0 0, center center;
