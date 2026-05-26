@@ -237,33 +237,63 @@ h2 {
   pointer-events: none;
 }
 
+/* Mobile */
 @media (max-width: 900px) {
+  :root {
+    --header-h: 116px;
+  }
+
+  html,
   body {
-    overflow: auto;
+    height: 100%;
+  }
+
+  html {
+    scroll-padding-top: var(--header-h);
+  }
+
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 
   .site-header {
+    position: fixed;
+    inset: 0 0 auto 0;
     grid-template-columns: 1fr;
     gap: 0.35rem;
-    height: auto;
+    height: var(--header-h);
     padding: 1rem;
+    align-content: center;
   }
 
+  .brand,
   .nav,
   .meta {
     justify-self: start;
   }
 
   .horizontal-shell {
-    position: static;
+    position: absolute;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: block;
-    overflow: visible;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 
   .panel {
     min-width: 100%;
+    min-height: calc(100dvh - var(--header-h));
     height: auto;
     grid-template-columns: 1fr;
+  }
+
+  .panel__content,
+  .panel__visual {
+    padding: 1.25rem;
   }
 
   .panel__visual {
