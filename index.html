@@ -91,124 +91,125 @@
     </section>
 
     <section class="panel" id="panel-2">
-        <div class="panel__content">
-            <div>
-            <p class="eyebrow">Selected Projects</p>
-            <h2>Three projects that reflect how I work across collaboration, backend systems, and security.</h2>
-            </div>
-
-            <div class="project-list">
-            <button
-                type="button"
-                class="project-card is-active"
-                aria-pressed="true"
-                data-project="bomberman"
-                data-title="Bomberman-dom"
-                data-body="A multiplayer browser game built around synchronization, custom framework logic, and performance-first rendering under real-time constraints."
-                data-caption-title="Bomberman-dom"
-                data-caption-text="Real-time gameplay, custom framework architecture, and performance-first front-end logic."
-                data-image-class="showcase-image--bomberman"
-            >
-              <h3>Bomberman-dom</h3>
-              <p>
-                A team-built multiplayer browser game developed on top of a custom mini-framework,
-                focused on real-time interaction, DOM abstraction, and collaborative front-end architecture.
-              </p>
-            </button>
-
-            <button
-                type="button"
-                class="project-card"
-                aria-pressed="false"
-                data-project="ecommerce"
-                data-title="E-Commerce"
-                data-body="A full-stack commerce platform focused on cart flow, search and filtering, order handling, user profiles, and collaborative delivery practices."
-                data-caption-title="E-Commerce"
-                data-caption-text="Product flows, search, profiles, orders, and full-stack coordination across services."
-                data-image-class="showcase-image--ecommerce"
-            >
-                <h3>E-Commerce / buy-02 </h3>
-                <p>
-                A microservice-based e-commerce platform where I contributed to project flow and architecture,
-                while working across backend engineering, Kafka-based communication, CI/CD, and security.
-                </p>
-            </button>
-
-            <button
-                type="button"
-                class="project-card"
-                aria-pressed="false"
-                data-project="holeinbin"
-                data-title="Hole-in-bin"
-                data-body="A reverse-engineering and binary exploitation project centered on debugging, low-level analysis, and understanding how vulnerabilities are uncovered and fixed."
-                data-caption-title="Hole-in-bin"
-                data-caption-text="Binary analysis, exploitation workflows, and practical security problem-solving."
-                data-image-class="showcase-image--holeinbin"
-            >
-                <h3>Hole-in-bin</h3>
-                <p>
-                A penetration testing and binary exploitation project on a provided virtual machine,
-                combining enumeration, debugging, reverse engineering, and vertical and horizontal
-                privilege escalation to reach root.
-                </p>
-            </button>
-            </div>
-
-            <div class="panel__footer">
-            <span>Built across performance, systems, and security.</span>
-            </div>
+      <div class="panel__content">
+        <div>
+          <p class="eyebrow">Selected Projects</p>
+          <h2>Three projects that reflect how I work across collaboration, backend systems, and security.</h2>
         </div>
 
-      <div class="panel__visual project-showcase">
-          <article class="showcase-item is-active">
-              <button
-                  type="button"
-                  class="showcase-trigger"
-                  id="project-video-trigger"
-                  data-video-src="./assets/Dombers.mp4"
-                  aria-haspopup="dialog"
-                  aria-controls="project-video-modal"
-                  aria-label="Open Bomberman-dom demo video"
-              >
-                  <div class="showcase-image showcase-image--bomberman" id="project-image" aria-hidden="true">
-                      <span class="showcase-play-badge">
-                          <span class="showcase-play-icon">▶</span>
-                          Watch demo
-                      </span>
-                  </div>
-              </button>
+        <div class="project-list">
+          <button
+            type="button"
+            class="project-card is-active"
+            aria-pressed="true"
+            data-project="bomberman"
+            data-title="Bomberman-dom"
+            data-body="A multiplayer browser game built around synchronization, custom framework logic, and performance-first rendering under real-time constraints."
+            data-caption-title="Bomberman-dom"
+            data-caption-text="Real-time gameplay, custom framework architecture, and performance-first front-end logic."
+            data-image-class="showcase-image--bomberman"
+          >
+            <h3>Bomberman-dom</h3>
+            <p>
+              A team-built multiplayer browser game developed on top of a custom mini-framework,
+              focused on real-time interaction, DOM abstraction, and collaborative front-end architecture.
+            </p>
+          </button>
 
-              <div class="caption" id="project-caption">
-                  <div>
-                      <strong id="project-caption-title">Bomberman-dom</strong>
-                      <span id="project-caption-text">
-                          Real-time gameplay, custom framework architecture, and performance-first front-end logic.
-                      </span>
-                  </div>
-                  <span>02</span>
-              </div>
-          </article>
+          <button
+            type="button"
+            class="project-card"
+            aria-pressed="false"
+            data-project="ecommerce"
+            data-title="E-Commerce"
+            data-body="A full-stack commerce platform focused on cart flow, search and filtering, order handling, user profiles, and collaborative delivery practices."
+            data-caption-title="E-Commerce"
+            data-caption-text="Product flows, search, profiles, orders, and full-stack coordination across services."
+            data-image-class="showcase-image--ecommerce"
+          >
+            <h3>E-Commerce / buy-02</h3>
+            <p>
+              A microservice-based e-commerce platform where I contributed to project flow and architecture,
+              while working across backend engineering, Kafka-based communication, CI/CD, and security.
+            </p>
+          </button>
+
+          <button
+            type="button"
+            class="project-card"
+            aria-pressed="false"
+            data-project="holeinbin"
+            data-title="Hole-in-bin"
+            data-body="A reverse-engineering and binary exploitation project centered on debugging, low-level analysis, and understanding how vulnerabilities are uncovered and fixed."
+            data-caption-title="Hole-in-bin"
+            data-caption-text="Binary analysis, exploitation workflows, and practical security problem-solving."
+            data-image-class="showcase-image--holeinbin"
+          >
+            <h3>Hole-in-bin</h3>
+            <p>
+              A penetration testing and binary exploitation project on a provided virtual machine,
+              combining enumeration, debugging, reverse engineering, and vertical and horizontal
+              privilege escalation to reach root.
+            </p>
+          </button>
+        </div>
+
+        <div class="panel__footer">
+          <span>Built across performance, systems, and security.</span>
+        </div>
+      </div>
+
+      <div class="panel__visual project-showcase">
+        <article class="showcase-item is-active">
+          <div class="showcase-image showcase-image--bomberman" id="project-image" aria-hidden="true"></div>
+
+          <div class="caption" id="project-caption">
+            <div>
+              <strong id="project-caption-title">Bomberman-dom</strong>
+              <span id="project-caption-text">
+                Real-time gameplay, custom framework architecture, and performance-first front-end logic.
+              </span>
+            </div>
+            <span>02</span>
+          </div>
+        </article>
       </div>
     </section>
 
     <section class="panel" id="panel-3">
       <div class="panel__content">
         <div>
-          <p class="eyebrow">Brand story</p>
-          <h2>Make the page feel curated, not assembled from templates.</h2>
+          <p class="eyebrow">Technical profile</p>
+          <h2>Skills shaped by real projects, curiosity-driven problem solving, and steady discipline.</h2>
         </div>
 
         <div>
           <p class="lead">
-            The source page works because each section feels like a deliberate chapter.
-            Keep that. Avoid generic SaaS rows, icon circles, and bright gradient blocks.
-            Let a serif headline, quiet body copy, and strong image crop carry the identity.
+            Built across <span id="experience-months"></span> of project work, this skill set grew through APIs,
+            microservices, code quality, deployment workflows, and secure application design. Over time, the projects
+            made backend-first thinking, frontend awareness, CI/CD, and security-minded building part of the process.
           </p>
         </div>
 
+        <div class="strength-row">
+          <span>Go</span>
+          <span>Java</span>
+          <span>Spring Boot</span>
+          <span>JavaScript</span>
+          <span>Angular</span>
+          <span>Python</span>
+          <span>Kafka</span>
+          <span>MongoDB Atlas</span>
+          <span>Jenkins</span>
+          <span>SonarQube</span>
+          <span>Cloudflare R2</span>
+          <span>Hetzner</span>
+          <span>OWASP</span>
+        </div>
+
         <div class="panel__footer">
-          <span>Restraint over decoration</span>
-          <span>Editorial pacing over feature grids</span>
+          <span>Backend first, full-stack capable</span>
+          <span>Curious, structured, and security-minded</span>
         </div>
       </div>
 
@@ -216,8 +217,8 @@
         <div class="image-block alt-2"></div>
         <div class="caption">
           <div>
-            <strong>Atmosphere panel</strong>
-            A single image can act like a full section in this layout.
+            <strong>Stack visual</strong>
+            Technologies used across the work so far, gathered into one visual constellation.
           </div>
           <span>03</span>
         </div>
@@ -262,27 +263,5 @@
 
   <div class="scroll-hint">Scroll sideways →</div>
 
-  <dialog class="video-modal" id="project-video-modal" aria-labelledby="project-video-title">
-    <div class="video-modal__inner">
-        <button
-            type="button"
-            class="video-modal__close"
-            id="project-video-close"
-            aria-label="Close video"
-        >
-            ✕
-        </button>
-
-        <p class="sr-only" id="project-video-title">Project demo video</p>
-
-        <video
-            id="project-video-player"
-            class="video-modal__player"
-            controls
-            playsinline
-            preload="metadata"
-        ></video>
-    </div>
-</dialog>
 </body>
 </html>

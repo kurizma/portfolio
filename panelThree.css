@@ -1,0 +1,53 @@
+#panel-3 h2 {
+  max-width: 24ch;
+}
+
+#panel-3 .strength-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
+}
+
+#panel-3 .strength-row span {
+  padding: 0.45rem 0.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+#panel-3 .panel__visual {
+  display: grid;
+  gap: 1rem;
+}
+
+#panel-3 .image-block.alt-2 {
+  min-height: 540px;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.14)),
+    url("/assets/stackVisual2.png");
+  background-repeat: cover, no-repeat;
+  background-size: auto, cover;
+  background-position: 0 0, center center;
+  background-color: #ece6de;
+}
+
+#panel-3 .caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+#panel-3 .caption strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+@media (max-width: 900px) {
+  #panel-3 .image-block.alt-2 {
+    min-height: 360px;
+  }
+}

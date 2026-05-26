@@ -27,4 +27,25 @@ document.addEventListener("DOMContentLoaded", () => {
       captionText.textContent = card.dataset.captionText;
     });
   });
+
+  function diffInMonths(startDate, endDate) {
+    let months =
+      (endDate.getFullYear() - startDate.getFullYear()) * 12 +
+      (endDate.getMonth() - startDate.getMonth());
+
+    if (endDate.getDate() < startDate.getDate()) {
+      months--;
+    }
+
+    return Math.max(0, months);
+  }
+
+  const experienceMonths = document.querySelector("#experience-months");
+
+  if (experienceMonths) {
+    const startedAt = new Date("2024-09-01");
+    const now = new Date();
+    const months = diffInMonths(startedAt, now);
+    experienceMonths.textContent = `${months} months`;
+  }
 });

@@ -49,26 +49,15 @@
 
 #panel-2 .project-showcase {
   position: relative;
-  height: 100%;
   min-height: 420px;
-  overflow: hidden;
 }
 
 #panel-2 .showcase-item {
-  position: absolute;
-  inset: 0;
   display: grid;
   grid-template-rows: 1fr auto;
   gap: var(--space-6);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 420ms ease;
-}
-
-#panel-2 .showcase-item.is-active {
-  opacity: 1;
-  pointer-events: auto;
-  z-index: 2;
+  height: 100%;
+  min-height: 420px;
 }
 
 #panel-2 .showcase-image {
@@ -80,52 +69,47 @@
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  transform: scale(1.035);
+  background-color: #ece6de;
+  transform: scale(1);
   transform-origin: center center;
   transition:
     transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
-    filter 500ms ease;
+    filter 500ms ease,
+    opacity 300ms ease;
   will-change: transform, opacity;
-  filter: saturate(0.94) contrast(0.98);
-  pointer-events: none;
-}
-
-#panel-2 .showcase-item.is-active .showcase-image {
-  transform: scale(1);
   filter: saturate(1) contrast(1);
 }
 
 #panel-2 .caption {
-  opacity: 0;
-  transform: translateY(12px);
+  opacity: 1;
+  transform: translateY(0);
   transition:
     opacity 300ms ease,
     transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-#panel-2 .showcase-item.is-active .caption {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 120ms;
-}
-
 #panel-2 .showcase-image--bomberman {
   background:
-    linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.18)),
-    url("/assets/bomberman-dom.png") no-repeat;
-  background-color: rgba(18, 16, 14, 0.18);
+    linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.14)),
+    url("/assets/bomberman-dom.png");
+  background-color: #ece6de;
+  background-size: cover
 }
 
 #panel-2 .showcase-image--ecommerce {
   background:
     linear-gradient(rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.16)),
-    url("/assets/utanCig.png");
+    url("/assets/buy02landing.png");
+  background-color: #ece6de;
+  background-size: cover
 }
 
 #panel-2 .showcase-image--holeinbin {
   background:
     linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)),
-    url("/assets/utanCig.png");
+    url("/assets/hole-in-bin.png");
+  background-color: #ece6de;
+  background-size: cover
 }
 
 @media (max-width: 900px) {
@@ -133,164 +117,8 @@
     min-height: 440px;
   }
 
+  #panel-2 .showcase-item,
   #panel-2 .showcase-image {
     min-height: 320px;
-  }
-}
-
-/* Video */
-
-#panel-2 .showcase-trigger {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
-  min-height: 420px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  text-align: left;
-  cursor: pointer;
-  border-radius: var(--radius);
-  z-index: 3;
-}
-
-#panel-2 .showcase-trigger:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 6px;
-}
-
-#panel-2 .showcase-trigger .showcase-image {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-#panel-2 .showcase-trigger:hover .showcase-image,
-#panel-2 .showcase-trigger:focus-visible .showcase-image {
-  transform: scale(1.01);
-  filter: saturate(1.03) contrast(1.01);
-}
-
-#panel-2 .showcase-play-badge {
-  position: absolute;
-  left: var(--space-6);
-  bottom: var(--space-6);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.85rem 1rem;
-  border-radius: 999px;
-  background: rgba(18, 16, 14, 0.72);
-  color: #f7f2eb;
-  font-size: var(--text-sm);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  backdrop-filter: blur(10px);
-  z-index: 3;
-  pointer-events: none;
-}
-
-#panel-2 .showcase-play-icon {
-  display: grid;
-  place-items: center;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.16);
-  font-size: 0.85rem;
-  line-height: 1;
-}
-
-#panel-2 .showcase-trigger[hidden] {
-  display: none;
-}
-
-.video-modal {
-  width: min(1200px, calc(100vw - 2rem));
-  max-width: none;
-  padding: 0;
-  border: none;
-  background: transparent;
-  overflow: visible;
-}
-
-.video-modal::backdrop {
-  background: rgba(10, 10, 10, 0.82);
-  backdrop-filter: blur(8px);
-}
-
-.video-modal__inner {
-  position: relative;
-  width: 100%;
-  height: min(88vh, 800px);
-  animation: videoModalIn 220ms ease;
-}
-
-.video-modal__player {
-  width: 100%;
-  height: 100%;
-  display: block;
-  border-radius: 1rem;
-  background: #000;
-  object-fit: contain;
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
-}
-
-.video-modal__close {
-  position: absolute;
-  top: -3.25rem;
-  right: 0;
-  width: 2.75rem;
-  height: 2.75rem;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  color: #fff;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.video-modal__close:hover,
-.video-modal__close:focus-visible {
-  background: rgba(255, 255, 255, 0.16);
-}
-
-body.video-modal-open {
-  overflow: hidden;
-}
-
-@keyframes videoModalIn {
-  from {
-    opacity: 0;
-    transform: scale(0.985);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@media (max-width: 900px) {
-  #panel-2 .showcase-play-badge {
-    left: var(--space-4);
-    bottom: var(--space-4);
-  }
-
-  .video-modal {
-    width: calc(100vw - 1rem);
-  }
-
-  .video-modal__inner {
-    height: auto;
-  }
-
-  .video-modal__player {
-    aspect-ratio: 16 / 9;
-    height: auto;
-  }
-
-  .video-modal__close {
-    top: -2.85rem;
   }
 }
