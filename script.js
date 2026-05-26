@@ -49,3 +49,17 @@ document.addEventListener("DOMContentLoaded", () => {
     experienceMonths.textContent = `${months} months`;
   }
 });
+
+// Panel 4
+const lastPanel = document.querySelector('#panel-4');
+const scrollHint = document.querySelector('.scroll-hint');
+
+if (lastPanel && scrollHint) {
+  const observer = new IntersectionObserver(([entry]) => {
+    scrollHint.classList.toggle('is-hidden', entry.isIntersecting);
+  }, {
+    threshold: 0.6
+  });
+
+  observer.observe(lastPanel);
+}

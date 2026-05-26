@@ -51,3 +51,8 @@
     min-height: 360px;
   }
 }
+
+#panel-3 .caption > span {
+  align-self: flex-end;
+  margin-left: auto;
+}
