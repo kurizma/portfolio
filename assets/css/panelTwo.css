@@ -91,7 +91,7 @@
 #panel-2 .showcase-image--bomberman {
   background:
     linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.14)),
-    url("/assets/bomberman-dom.png");
+    url("/assets/images/bomberman-dom.png");
   background-color: #ece6de;
   background-size: cover
 }
@@ -99,7 +99,7 @@
 #panel-2 .showcase-image--ecommerce {
   background:
     linear-gradient(rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.16)),
-    url("/assets/buy02landing.png");
+    url("/assets/images/buy02landing.png");
   background-color: #ece6de;
   background-size: cover
 }
@@ -107,7 +107,7 @@
 #panel-2 .showcase-image--holeinbin {
   background:
     linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)),
-    url("/assets/hole-in-bin.png");
+    url("/assets/images/hole-in-bin.png");
   background-color: #ece6de;
   background-size: cover
 }
