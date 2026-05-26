@@ -94,7 +94,7 @@
         <div class="panel__content">
             <div>
             <p class="eyebrow">Selected Projects</p>
-            <h2>Three projects that best reflect how I build across performance, product systems, and security.</h2>
+            <h2>Three projects that reflect how I work across collaboration, backend systems, and security.</h2>
             </div>
 
             <div class="project-list">
@@ -109,11 +109,11 @@
                 data-caption-text="Real-time gameplay, custom framework architecture, and performance-first front-end logic."
                 data-image-class="showcase-image--bomberman"
             >
-                <h3>Bomberman-dom</h3>
-                <p>
-                A multiplayer browser game built around synchronization, custom framework logic,
-                and performance-first rendering under real-time constraints.
-                </p>
+              <h3>Bomberman-dom</h3>
+              <p>
+                A team-built multiplayer browser game developed on top of a custom mini-framework,
+                focused on real-time interaction, DOM abstraction, and collaborative front-end architecture.
+              </p>
             </button>
 
             <button
@@ -127,10 +127,10 @@
                 data-caption-text="Product flows, search, profiles, orders, and full-stack coordination across services."
                 data-image-class="showcase-image--ecommerce"
             >
-                <h3>E-Commerce</h3>
+                <h3>E-Commerce / buy-02 </h3>
                 <p>
-                A full-stack commerce platform focused on cart flow, search and filtering,
-                order handling, user profiles, and collaborative delivery practices.
+                A microservice-based e-commerce platform where I contributed to project flow and architecture,
+                while working across backend engineering, Kafka-based communication, CI/CD, and security.
                 </p>
             </button>
 
@@ -147,33 +147,48 @@
             >
                 <h3>Hole-in-bin</h3>
                 <p>
-                A reverse-engineering and binary exploitation project centered on debugging,
-                low-level analysis, and understanding how vulnerabilities are uncovered and fixed.
+                A penetration testing and binary exploitation project on a provided virtual machine,
+                combining enumeration, debugging, reverse engineering, and vertical and horizontal
+                privilege escalation to reach root.
                 </p>
             </button>
             </div>
 
             <div class="panel__footer">
-            <span>Performance / product systems / security research</span>
-            <span>Interactive project showcase</span>
+            <span>Built across performance, systems, and security.</span>
             </div>
         </div>
 
-        <div class="panel__visual project-showcase">
-            <article class="showcase-item is-active">
-            <div class="showcase-image showcase-image--bomberman" id="project-image" aria-hidden="true"></div>
+      <div class="panel__visual project-showcase">
+          <article class="showcase-item is-active">
+              <button
+                  type="button"
+                  class="showcase-trigger"
+                  id="project-video-trigger"
+                  data-video-src="./assets/Dombers.mp4"
+                  aria-haspopup="dialog"
+                  aria-controls="project-video-modal"
+                  aria-label="Open Bomberman-dom demo video"
+              >
+                  <div class="showcase-image showcase-image--bomberman" id="project-image" aria-hidden="true">
+                      <span class="showcase-play-badge">
+                          <span class="showcase-play-icon">▶</span>
+                          Watch demo
+                      </span>
+                  </div>
+              </button>
 
-            <div class="caption" id="project-caption">
-                <div>
-                <strong id="project-caption-title">Bomberman-dom</strong>
-                <span id="project-caption-text">
-                    Real-time gameplay, custom framework architecture, and performance-first front-end logic.
-                </span>
-                </div>
-                <span>02</span>
-            </div>
-            </article>
-        </div>
+              <div class="caption" id="project-caption">
+                  <div>
+                      <strong id="project-caption-title">Bomberman-dom</strong>
+                      <span id="project-caption-text">
+                          Real-time gameplay, custom framework architecture, and performance-first front-end logic.
+                      </span>
+                  </div>
+                  <span>02</span>
+              </div>
+          </article>
+      </div>
     </section>
 
     <section class="panel" id="panel-3">
@@ -246,5 +261,28 @@
   </main>
 
   <div class="scroll-hint">Scroll sideways →</div>
+
+  <dialog class="video-modal" id="project-video-modal" aria-labelledby="project-video-title">
+    <div class="video-modal__inner">
+        <button
+            type="button"
+            class="video-modal__close"
+            id="project-video-close"
+            aria-label="Close video"
+        >
+            ✕
+        </button>
+
+        <p class="sr-only" id="project-video-title">Project demo video</p>
+
+        <video
+            id="project-video-player"
+            class="video-modal__player"
+            controls
+            playsinline
+            preload="metadata"
+        ></video>
+    </div>
+</dialog>
 </body>
 </html>
