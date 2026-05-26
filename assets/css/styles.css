@@ -248,13 +248,9 @@ h2 {
     height: 100%;
   }
 
-  html {
-    scroll-padding-top: var(--header-h);
-  }
-
   body {
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: hidden;
   }
 
   .site-header {
@@ -279,15 +275,17 @@ h2 {
     left: 0;
     right: 0;
     bottom: 0;
-    display: block;
-    overflow-x: hidden;
-    overflow-y: auto;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
   }
 
   .panel {
-    min-width: 100%;
-    min-height: calc(100dvh - var(--header-h));
-    height: auto;
+    flex: 0 0 100vw;
+    min-width: 100vw;
+    height: calc(100dvh - var(--header-h));
     grid-template-columns: 1fr;
   }
 
@@ -297,7 +295,7 @@ h2 {
   }
 
   .panel__visual {
-    min-height: 380px;
+    min-height: 260px;
   }
 
   .scroll-hint {
