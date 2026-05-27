@@ -271,13 +271,18 @@ h2 {
 }
 
 .panel-toggle {
-  display: none !important;
+  display: none;
 }
+
 
 /* Mobile */
 @media (max-width: 900px) {
 :root {
   --header-h: 79px;
+}
+
+.panel-toggle {
+  display: inline-flex !important;
 }
 
 .site-header {
