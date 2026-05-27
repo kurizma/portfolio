@@ -271,69 +271,105 @@ h2 {
 }
 
 /* Mobile */
+/* Mobile */
 @media (max-width: 900px) {
-:root {
-  --header-h: 116px;
+  :root {
+    --header-h: 116px;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+
+  .site-header {
+    position: fixed;
+    inset: 0 0 auto 0;
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+    height: var(--header-h);
+    padding: 1rem;
+    align-content: center;
+  }
+
+  .brand,
+  .nav,
+  .meta {
+    justify-self: start;
+  }
+
+  .horizontal-shell {
+    position: absolute;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    align-items: stretch;
+  }
+
+  .panel {
+    flex: 0 0 100vw;
+    min-width: 100vw;
+    height: auto;
+    min-height: calc(100dvh - var(--header-h));
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+    overflow-x: hidden;
+    align-content: start;
+  }
+
+  .panel-nav {
+    display: none;
+  }
+
+  .panel__content,
+  .panel__visual {
+    padding: 1.25rem;
+    min-height: auto;
+  }
+
+  .panel__content {
+    gap: var(--space-6);
+  }
+
+  .panel__visual {
+    min-height: auto;
+    grid-template-rows: auto auto;
+  }
+
+  .scroll-hint {
+    display: none;
+  }
+  @media (max-width: 900px) {
+  #panel-2 .project-showcase,
+  #panel-2 .showcase-item,
+  #panel-2 .showcase-image {
+    min-height: auto;
+  }
+
+  #panel-2 .showcase-image {
+    aspect-ratio: 4 / 3;
+  }
+
+  #panel-3 .image-block.alt-2,
+  #panel-4 .image-block.alt-3 {
+    min-height: auto;
+    aspect-ratio: 4 / 5;
+  }
 }
 
-html,
-body {
-  height: 100%;
-}
-
-body {
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
-.site-header {
-  position: fixed;
-  inset: 0 0 auto 0;
-  grid-template-columns: 1fr;
-  gap: 0.35rem;
-  height: var(--header-h);
-  padding: 1rem;
-  align-content: center;
-}
-
-.brand,
-.nav,
-.meta {
-  justify-self: start;
-}
-
-.horizontal-shell {
-  position: absolute;
-  top: var(--header-h);
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-}
-
-.panel {
-  flex: 0 0 100vw;
-  min-width: 100vw;
-  height: calc(100dvh - var(--header-h));
-  grid-template-columns: 1fr;
-}
-
-.panel-nav {
-  display: none;
-}
-
-.panel__content,
-.panel__visual {
-  padding: 1.25rem;
-}
-
-.panel__visual {
-  min-height: 260px;
-}
 
 
 }
+
+
