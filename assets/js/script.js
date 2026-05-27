@@ -146,5 +146,24 @@ document.addEventListener("DOMContentLoaded", () => {
     updatePanelNav();
   }
 
+  // Mobile
+  const openVisualButtons = document.querySelectorAll("[data-open-visual]");
+  const closeVisualButtons = document.querySelectorAll("[data-close-visual]");
+
+  openVisualButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const panel = button.closest(".panel");
+      if (!panel) return;
+      panel.classList.add("is-visual-open");
+    });
+  });
+
+  closeVisualButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const panel = button.closest(".panel");
+      if (!panel) return;
+      panel.classList.remove("is-visual-open");
+    });
+  });
 
 });

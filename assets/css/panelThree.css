@@ -17,7 +17,6 @@
 }
 
 #panel-3 .panel__visual {
-  display: grid;
   gap: 1rem;
 }
 
@@ -28,7 +27,7 @@
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.14)),
     url("../images/stackVisual2.png");
-  background-repeat: cover, no-repeat;
+  background-repeat: no-repeat, no-repeat;
   background-size: auto, cover;
   background-position: 0 0, center center;
   background-color: #ece6de;
