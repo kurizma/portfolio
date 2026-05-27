@@ -86,6 +86,18 @@ img {
   text-transform: uppercase;
 }
 
+.nav a {
+  opacity: 0.6;
+  transition: opacity 180ms ease, color 180ms ease;
+}
+
+.nav a:hover,
+.nav a:focus-visible,
+.nav a.is-active {
+  opacity: 1;
+  color: var(--text);
+}
+
 .meta {
   justify-self: end;
   font-size: var(--text-xs);
@@ -260,66 +272,68 @@ h2 {
 
 /* Mobile */
 @media (max-width: 900px) {
-  :root {
-    --header-h: 116px;
-  }
+:root {
+  --header-h: 116px;
+}
 
-  html,
-  body {
-    height: 100%;
-  }
+html,
+body {
+  height: 100%;
+}
 
-  body {
-    overflow-x: hidden;
-    overflow-y: hidden;
-  }
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
 
-  .site-header {
-    position: fixed;
-    inset: 0 0 auto 0;
-    grid-template-columns: 1fr;
-    gap: 0.35rem;
-    height: var(--header-h);
-    padding: 1rem;
-    align-content: center;
-  }
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  grid-template-columns: 1fr;
+  gap: 0.35rem;
+  height: var(--header-h);
+  padding: 1rem;
+  align-content: center;
+}
 
-  .brand,
-  .nav,
-  .meta {
-    justify-self: start;
-  }
+.brand,
+.nav,
+.meta {
+  justify-self: start;
+}
 
-  .horizontal-shell {
-    position: absolute;
-    top: var(--header-h);
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-  }
+.horizontal-shell {
+  position: absolute;
+  top: var(--header-h);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
 
-  .panel {
-    flex: 0 0 100vw;
-    min-width: 100vw;
-    height: calc(100dvh - var(--header-h));
-    grid-template-columns: 1fr;
-  }
+.panel {
+  flex: 0 0 100vw;
+  min-width: 100vw;
+  height: calc(100dvh - var(--header-h));
+  grid-template-columns: 1fr;
+}
 
-  .panel__content,
-  .panel__visual {
-    padding: 1.25rem;
-  }
+.panel-nav {
+  display: none;
+}
 
-  .panel__visual {
-    min-height: 260px;
-  }
+.panel__content,
+.panel__visual {
+  padding: 1.25rem;
+}
 
-  .scroll-hint {
-    display: none;
-  }
+.panel__visual {
+  min-height: 260px;
+}
+
+
 }

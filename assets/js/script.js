@@ -59,8 +59,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const panels = Array.from(document.querySelectorAll(".panel"));
   const prevBtn = document.querySelector(".panel-nav__btn--prev");
   const nextBtn = document.querySelector(".panel-nav__btn--next");
+  const navLinks = Array.from(document.querySelectorAll('.nav a[href^="#panel-"]'));
 
-  if (shell && panels.length && prevBtn && nextBtn) {
+  if (shell && panels.length) {
     const getActivePanelIndex = () => {
       const shellCenter = shell.scrollLeft + shell.clientWidth / 2;
 
@@ -80,9 +81,17 @@ document.addEventListener("DOMContentLoaded", () => {
       return closestIndex;
     };
 
-    const scrollToPanel = (index) => {
-      const safeIndex = Math.max(0, Math.min(index, panels.length - 1));
-      panels[safeIndex].scrollIntoView({
+    const scrollToPanel = (target) => {
+      let panel = target;
+
+      if (typeof target === "number") {
+        const safeIndex = Math.max(0, Math.min(target, panels.length - 1));
+        panel = panels[safeIndex];
+      }
+
+      if (!panel) return;
+
+      panel.scrollIntoView({
         behavior: "smooth",
         block: "nearest",
         inline: "start"
@@ -91,18 +100,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const updatePanelNav = () => {
       const activeIndex = getActivePanelIndex();
-      prevBtn.disabled = activeIndex === 0;
-      nextBtn.disabled = activeIndex === panels.length - 1;
+
+      if (prevBtn) {
+        prevBtn.disabled = activeIndex === 0;
+      }
+
+      if (nextBtn) {
+        nextBtn.disabled = activeIndex === panels.length - 1;
+      }
+
+      navLinks.forEach((link, index) => {
+        const isActive = index === activeIndex;
+        link.classList.toggle("is-active", isActive);
+        link.setAttribute("aria-current", isActive ? "page" : "false");
+      });
     };
 
-    prevBtn.addEventListener("click", () => {
-      const activeIndex = getActivePanelIndex();
-      scrollToPanel(activeIndex - 1);
-    });
+    if (prevBtn) {
+      prevBtn.addEventListener("click", () => {
+        scrollToPanel(getActivePanelIndex() - 1);
+      });
+    }
 
-    nextBtn.addEventListener("click", () => {
-      const activeIndex = getActivePanelIndex();
-      scrollToPanel(activeIndex + 1);
+    if (nextBtn) {
+      nextBtn.addEventListener("click", () => {
+        scrollToPanel(getActivePanelIndex() + 1);
+      });
+    }
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        const targetId = link.getAttribute("href");
+        const targetPanel = targetId ? document.querySelector(targetId) : null;
+
+        if (!targetPanel) return;
+
+        event.preventDefault();
+        scrollToPanel(targetPanel);
+      });
     });
 
     shell.addEventListener("scroll", updatePanelNav, { passive: true });
