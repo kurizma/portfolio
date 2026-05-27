@@ -1,6 +1,6 @@
 #panel-4 h2 {
   max-width: 24ch;
-  margin: 3rem 0 0;;
+  margin: 3rem 0 0;
 }
 
 #panel-4 h3 {
@@ -68,7 +68,6 @@
 }
 
 #panel-4 .image-block.alt-3 {
-  aspect-ratio: 3 / 4;
   min-height: 540px;
   border-radius: 1.5rem;
   overflow: hidden;
