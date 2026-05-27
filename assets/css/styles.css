@@ -271,36 +271,13 @@ h2 {
 }
 
 /* Mobile */
-/* Mobile */
 @media (max-width: 900px) {
   :root {
     --header-h: 116px;
   }
 
-  html,
   body {
-    height: 100%;
-  }
-
-  body {
-    overflow-x: hidden;
-    overflow-y: hidden;
-  }
-
-  .site-header {
-    position: fixed;
-    inset: 0 0 auto 0;
-    grid-template-columns: 1fr;
-    gap: 0.35rem;
-    height: var(--header-h);
-    padding: 1rem;
-    align-content: center;
-  }
-
-  .brand,
-  .nav,
-  .meta {
-    justify-self: start;
+    overflow: hidden;
   }
 
   .horizontal-shell {
@@ -314,62 +291,61 @@ h2 {
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    align-items: stretch;
   }
 
   .panel {
     flex: 0 0 100vw;
     min-width: 100vw;
-    height: auto;
-    min-height: calc(100dvh - var(--header-h));
-    grid-template-columns: 1fr;
+    height: calc(100dvh - var(--header-h));
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
+    overflow: hidden;
+  }
+
+  .panel__content,
+  .panel__visual {
+    min-width: 0;
+    min-height: 0;
+    padding: 1rem;
+  }
+
+  .panel__content {
+    gap: var(--space-4);
     overflow-y: auto;
-    overflow-x: hidden;
-    align-content: start;
+  }
+
+  .panel__visual {
+    overflow: hidden;
+    grid-template-rows: minmax(0, 1fr) auto;
+    gap: var(--space-4);
   }
 
   .panel-nav {
     display: none;
   }
 
-  .panel__content,
-  .panel__visual {
-    padding: 1.25rem;
-    min-height: auto;
-  }
-
-  .panel__content {
-    gap: var(--space-6);
-  }
-
-  .panel__visual {
-    min-height: auto;
-    grid-template-rows: auto auto;
-  }
-
-  .scroll-hint {
-    display: none;
-  }
   @media (max-width: 900px) {
   #panel-2 .project-showcase,
   #panel-2 .showcase-item,
   #panel-2 .showcase-image {
-    min-height: auto;
+    min-height: 0;
+    height: 100%;
   }
 
   #panel-2 .showcase-image {
-    aspect-ratio: 4 / 3;
+    background-size: cover;
   }
 
   #panel-3 .image-block.alt-2,
   #panel-4 .image-block.alt-3 {
-    min-height: auto;
-    aspect-ratio: 4 / 5;
+    min-height: 100%;
+  }
+
+  #panel-3 .caption,
+  #panel-4 .caption {
+    gap: 0.75rem;
   }
 }
-
-
-
 }
+
 
 
