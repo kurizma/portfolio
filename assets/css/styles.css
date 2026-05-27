@@ -109,15 +109,16 @@ img {
 .panel {
   min-width: 100vw;
   height: calc(100vh - var(--header-h));
-  scroll-snap-align: start;
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  border-right: 1px solid var(--line);
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .panel__content,
 .panel__visual {
   padding: clamp(1.5rem, 3vw, 4rem);
+  min-height: 0;
 }
 
 .panel__content {
@@ -125,6 +126,7 @@ img {
   flex-direction: column;
   justify-content: space-between;
   gap: var(--space-8);
+    background: var(--bg);
 }
 
 .panel__visual {
@@ -218,22 +220,41 @@ h2 {
   font-weight: 600;
   margin-bottom: 0.35rem;
 }
-
-.scroll-hint {
+.panel-nav {
   position: fixed;
-  left: 88%;
+  right: 1rem;
   bottom: 1rem;
-  transform: translateX(-50%);
-  padding: 0.45rem 0.7rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 20;
+}
+
+.panel-nav__btn {
+  padding: 0.55rem 0.85rem;
   border: 1px solid var(--line);
-  background: rgba(244, 240, 234, 0.72);
+  background: rgba(244, 240, 234, 0.78);
   backdrop-filter: blur(10px);
+  color: var(--muted);
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--muted);
-  z-index: 4;
-  opacity: 0.72;
+  cursor: pointer;
+  opacity: 0.88;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+.panel-nav__btn:hover:not(:disabled) {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.panel-nav__btn:disabled {
+  opacity: 0.35;
+  cursor: default;
   pointer-events: none;
 }
 
